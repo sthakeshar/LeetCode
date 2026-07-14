@@ -9,7 +9,6 @@ class Solution(object):
         y=x
         rev=0
         while x != 0:
-            temp=x%10
-            rev=rev*10+temp
+            rev=rev*10+x%10
             x=x/10
         return rev==y
