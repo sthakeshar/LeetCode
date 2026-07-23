@@ -4,13 +4,11 @@ class Solution(object):
         :type digits: List[int]
         :rtype: List[int]
         """
-        #(Convert list -> Number :: -> Addition +1 :: -> Number -> List
-        n=0
-        for i in digits:
-            n=(n*10)+i
-        n=n+1
-        digits=[]
-        while n>0:
-            digits.insert(0,n%10)
-            n//=10
-        return digits
+        #array approach
+        for i in range(len(digits)-1, -1, -1):
+            if digits[i] == 9:
+                digits[i] = 0
+            else:
+                digits[i] = digits[i] + 1
+                return digits
+        return [1] + digits 
